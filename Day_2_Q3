@@ -1,0 +1,11 @@
+public class ProductOfDigits{
+public static void main(String args[]){
+    int n=34567,product=1;
+    while(n>0){
+        int rem=n%10;
+        product*=rem;
+        n=n/10;
+    }
+    System.out.println("Product of digits: " + product);
+}
+}
