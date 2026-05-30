@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class LCMCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter first number: ");
+        int num1 = scanner.nextInt();
+        System.out.print("Enter second number: ");
+        int num2 = scanner.nextInt();
+        int lcm = findLCM(num1, num2);
+        System.out.println("The LCM of " + num1 + " and " + num2 + " is: " + lcm);
+        scanner.close();
+    }
+    public static int findLCM(int a, int b) {
+        if (a == 0 || b == 0) {
+            return 0; 
+        }
+        a = Math.abs(a);
+        b = Math.abs(b);
+        return (a / findGCD(a, b)) * b;
+    }
+    public static int findGCD(int a, int b) {
+        while (b != 0) {
+            int remainder = a % b;
+            a = b;
+            b = remainder;
+        }
+        return a;
+    }
+}
