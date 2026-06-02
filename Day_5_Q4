@@ -1,0 +1,13 @@
+public class LargestPrimeFactor{
+    public static void main(String[] args){
+        int num=28;
+        int LargestPrimeFactor=1;
+        for(int i=2; i<=num; i++){
+            while(num%i==0){
+                LargestPrimeFactor=i;
+                num/=i;
+            }
+        }
+        System.out.println("The largest prime factor of "+num+" is "+LargestPrimeFactor);
+    }
+}
