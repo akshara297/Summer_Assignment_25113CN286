@@ -1,0 +1,25 @@
+public class ArmstrongInRange{
+    public static void main(String[] args){
+        int start = 100, end = 999;
+        System.out.println("Armstrong numbers between " + start + " and " + end + ":");
+        for (int i = start; i <= end; i++) {
+            if (isArmstrong(i)) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+
+    public static boolean isArmstrong(int number) {
+        int originalNumber = number;
+        int sum = 0;
+        int remainder;
+
+        while (number != 0) {
+            remainder = number % 10;
+            sum += remainder * remainder * remainder;
+            number /= 10;
+        }
+
+        return originalNumber == sum;
+    }
+}

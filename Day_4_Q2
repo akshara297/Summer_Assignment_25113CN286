@@ -1,0 +1,23 @@
+public class Fibonacci{
+    public static int findNthFibonacci(int n){
+        if(n<=0){
+            return 0;
+        }
+        if(n==1){
+            return 1;
+        }
+        int firstTerm=0;
+        int secondTerm=1;
+        int currentTerm=0;
+        for(int i=2; i<=n; i++){
+            currentTerm = firstTerm + secondTerm;
+            firstTerm = secondTerm;
+            secondTerm = currentTerm;
+        }
+        return currentTerm;
+    }
+    public static void main(String[] args){
+        int n=7;
+        System.out.println("The " + n + "th Fibonacci number is: " + findNthFibonacci(n));
+    }
+}
