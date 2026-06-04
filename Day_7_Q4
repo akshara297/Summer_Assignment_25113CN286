@@ -1,0 +1,22 @@
+public class ReverseNumberDemo {
+    // Public wrapper method
+    public static int reverseNumber(int n) {
+        return reverseHelper(n, 0);
+    }
+
+    // Private helper method that carries the reversed result
+    private static int reverseHelper(int n, int reversed) {
+        // Base case
+        if (n == 0) {
+            return reversed;
+        }
+        // Build the reversed number and recurse
+        return reverseHelper(n / 10, reversed * 10 + (n % 10)); 
+    }
+
+    public static void main(String[] args) {
+        int number = 9876;
+        int result = reverseNumber(number);
+        System.out.println("Reverse of " + number + " is: " + result);
+    }
+}
