@@ -1,0 +1,17 @@
+public class main{
+    public static int Palindrome(String str){
+        StringBuilder sb = new StringBuilder(str);
+        sb.reverse();
+        if(str.equals(sb.toString())){
+            return 1;
+        }
+        else{
+            return 0;
+        }
+    }
+}
+public static void main(String[] args){
+    String str = "madam";
+    int result = Palindrome(str);
+    System.out.println(result);
+}

@@ -1,0 +1,21 @@
+public class Fibonacci{
+    public static int Fibonacci(int n){
+        if(n <=0 ){
+            System.out.println(" input should be a positive integer");
+            return;
+        }
+        int firstTerm=0, secondTerm=1;
+        System.out.print("Fibonacci Series ("+n+"terms):");
+        for(int i=1;i<=n;i++){
+            System.out.print(firstTerm + " ");
+            int nextTerm = firstTerm + secondTerm;
+            firstTerm = secondTerm;
+            secondTerm = nextTerm;
+        }
+        System.out.println();
+    }
+    public static void main(String[] args){
+        int n=10;
+        Fibonacci(n);
+    }
+}
