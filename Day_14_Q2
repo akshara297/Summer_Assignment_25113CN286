@@ -1,0 +1,18 @@
+public class ElementFrequency {
+
+    public static int countFrequency(int[] array, int target) {
+        int count = 0;
+        for (int element : array) {
+            if (element == target) {
+                count++;
+            }
+        }
+        return count;
+    }
+    public static void main(String[] args) {
+        int[] numbers = {10, 20, 30, 20, 10, 20, 40, 50, 20};
+        int target = 20;
+        int frequency = countFrequency(numbers, target);
+        System.out.println("The element " + target + " appears " + frequency + " times.");
+    }
+}

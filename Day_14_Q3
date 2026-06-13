@@ -1,0 +1,32 @@
+public class SecondLargest {
+    public static int findSecondLargest(int[] array) {
+        if (array == null || array.length < 2) {
+            System.out.println("Array must contain at least two elements.");
+            return Integer.MIN_VALUE; 
+        }
+        int largest = Integer.MIN_VALUE;
+        int secondLargest = Integer.MIN_VALUE;
+        for (int element : array) {
+            if (element > largest) {
+                secondLargest = largest; 
+                largest = element;       
+            } 
+            else if (element > secondLargest && element != largest) {
+                secondLargest = element; 
+            }
+        }
+        if (secondLargest == Integer.MIN_VALUE) {
+            System.out.println("There is no second largest element (all elements might be equal).");
+            return Integer.MIN_VALUE;
+        }
+
+        return secondLargest;
+    }
+    public static void main(String[] args) {
+        int[] numbers = {12, 35, 1, 10, 34, 1};
+        int result = findSecondLargest(numbers);
+        if (result != Integer.MIN_VALUE) {
+            System.out.println("The second largest element is: " + result);
+        }
+    }
+}
