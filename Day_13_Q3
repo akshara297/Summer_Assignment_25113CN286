@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class MaxMinArray {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the number of elements: ");
+        int size = sc.nextInt();
+
+        if (size <= 0) {
+            System.out.println("Invalid array size.");
+            sc.close();
+            return;
+        }
+
+        int[] arr = new int[size];
+
+        System.out.println("Enter " + size + " elements:");
+        for (int i = 0; i < size; i++) {
+            System.out.print("Element " + (i + 1) + ": ");
+            arr[i] = sc.nextInt();
+        }
+        sc.close();
+
+        int largest = arr[0];
+        int smallest = arr[0];
+
+        for (int i = 1; i < size; i++) {
+            if (arr[i] > largest) {
+                largest = arr[i]; 
+            } else if (arr[i] < smallest) {
+                smallest = arr[i];
+            }
+        }
+
+        System.out.println("\nLargest element: " + largest);
+        System.out.println("Smallest element: " + smallest);
+    }
+}
