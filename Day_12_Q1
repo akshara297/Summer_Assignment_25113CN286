@@ -9,9 +9,10 @@ public class main{
             return 0;
         }
     }
-}
-public static void main(String[] args){
-    String str = "madam";
-    int result = Palindrome(str);
-    System.out.println(result);
+
+    public static void main(String[] args){
+        String str = "madam";
+        int result = Palindrome(str);
+        System.out.println(result);
+    }
 }
