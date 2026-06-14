@@ -2,6 +2,7 @@ public class DecimalToBinary {
     public static void main(String[] args) {
         System.out.println("Enter a decimal number:");
         int decimalNumber = new java.util.Scanner(System.in).nextInt();
-        String binaryNumber = Integer.toBinary
+        String binaryNumber = Integer.toBinaryString(decimalNumber);
+        System.out.println("The binary equivalent is: " + binaryNumber);
     }
 }
