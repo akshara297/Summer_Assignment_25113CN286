@@ -14,9 +14,10 @@ public class Armstrong{
             return 0;
         }
     }
-}
-public static void main(String[] args){
-    int num = 153;
-    int result = Armstrong(num);
-    System.out.println(result);
+
+    public static void main(String[] args){
+        int num = 153;
+        int result = Armstrong(num);
+        System.out.println(result);
+    }
 }
