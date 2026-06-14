@@ -1,5 +1,5 @@
 public class Fibonacci{
-    public static int Fibonacci(int n){
+    public static void Fibonacci(int n){
         if(n <=0 ){
             System.out.println(" input should be a positive integer");
             return;
