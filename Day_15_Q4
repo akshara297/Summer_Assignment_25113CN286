@@ -1,0 +1,21 @@
+import java.util.Arrays;
+
+public class MoveZeroes {
+    public static void main(String[] args) {
+        int[] arr = {1, 0, 2, 3, 0, 4, 0, 5};
+        
+        moveZeroes(arr);
+        System.out.println(Arrays.toString(arr)); 
+    }
+    public static void moveZeroes(int[] arr) {
+        int insertPos = 0;
+        for (int num : arr) {
+            if (num != 0) {
+                arr[insertPos++] = num;
+            }
+        }
+        while (insertPos < arr.length) {
+            arr[insertPos++] = 0;
+        }
+    }
+}
