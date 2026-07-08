@@ -1,0 +1,55 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+class Book {
+    int id;
+    String title;
+    boolean isIssued;
+
+    public Book(int id, String title) {
+        this.id = id;
+        this.title = title;
+        this.isIssued = false;
+    }
+}
+
+public class LibraryManagementSystem {
+    private static List<Book> library = new ArrayList<>();
+
+    public static void main(String[] args) {
+        library.add(new Book(1, "Java Core"));
+        library.add(new Book(2, "Data Structures"));
+        
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.println("\n--- Library System ---\n1. View Books\n2. Issue Book\n3. Return Book\n4. Exit");
+            System.out.print("Choice: ");
+            int choice = scanner.nextInt();
+            
+            if (choice == 4) break;
+            switch (choice) {
+                case 1:
+                    for (Book b : library) {
+                        System.out.println(b.id + ". " + b.title + " [" + (b.isIssued ? "Issued" : "Available") + "]");
+                    }
+                    break;
+                case 2:
+                    System.out.print("Enter Book ID to issue: ");
+                    int id = scanner.nextInt();
+                    for (Book b : library) {
+                        if (b.id == id && !b.isIssued) { b.isIssued = true; System.out.println("Issued!"); }
+                    }
+                    break;
+                case 3:
+                    System.out.print("Enter Book ID to return: ");
+                    int rId = scanner.nextInt();
+                    for (Book b : library) {
+                        if (b.id == rId && b.isIssued) { b.isIssued = false; System.out.println("Returned!"); }
+                    }
+                    break;
+            }
+        }
+        scanner.close();
+    }
+}
