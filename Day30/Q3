@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+class Staff {
+    int id;
+    String name;
+    String department;
+
+    Staff(int id, String name, String department) {
+        this.id = id;
+        this.name = name;
+        this.department = department;
+    }
+}
+
+public class EmployeeManagementSystem {
+    public static void main(String[] args) {
+        Staff[] team = new Staff[10];
+        int count = 0;
+        Scanner sc = new Scanner(System.in);
+        
+        while (true) {
+            System.out.println("\n--- Employee Records ---\n1. Register Employee\n2. List Team\n3. Exit");
+            System.out.print("Choice: ");
+            int choice = sc.nextInt();
+            sc.nextLine();
+            if (choice == 3) break;
+            
+            if (choice == 1 && count < team.length) {
+                System.out.print("ID: "); int id = sc.nextInt(); sc.nextLine();
+                System.out.print("Name: "); String name = sc.nextLine();
+                System.out.print("Department: "); String dept = sc.nextLine();
+                team[count++] = new Staff(id, name, dept);
+            } else if (choice == 2) {
+                for (int i = 0; i < count; i++) {
+                    System.out.println("ID: " + team[i].id + " | Name: " + team[i].name + " | Dept: " + team[i].department);
+                }
+            }
+        }
+        sc.close();
+    }
+}
