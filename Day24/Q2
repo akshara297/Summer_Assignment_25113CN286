@@ -1,0 +1,17 @@
+public class AreaCalculator {
+    // Area of a square
+    public double calculateArea(double side) {
+        return side * side;
+    }
+
+    // Area of a rectangle
+    public double calculateArea(double length, double width) {
+        return length * width;
+    }
+
+    public static void main(String[] args) {
+        AreaCalculator calc = new AreaCalculator();
+        System.out.println("Square Area: " + calc.calculateArea(5.0));
+        System.out.println("Rectangle Area: " + calc.calculateArea(4.0, 6.0));
+    }
+}
