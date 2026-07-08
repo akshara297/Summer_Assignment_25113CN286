@@ -1,0 +1,13 @@
+public class StringLength {
+    public static int getLength(String str) {
+        int count = 0;
+        for (char c : str.toCharArray()) {
+            count++;
+        }
+        return count;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Length: " + getLength("JavaDeveloper"));
+    }
+}
