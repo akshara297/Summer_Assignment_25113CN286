@@ -1,0 +1,19 @@
+import java.util.Stack;
+
+public class ReverseWithStack {
+    public static String reverseString(String input) {
+        Stack<Character> stack = new Stack<>();
+        for (char c : input.toCharArray()) {
+            stack.push(c);
+        }
+        StringBuilder sb = new StringBuilder();
+        while (!stack.isEmpty()) {
+            sb.append(stack.pop());
+        }
+        return sb.toString();
+    }
+
+    public static void main(String[] args) {
+        System.out.println(reverseString("Structure"));
+    }
+}
