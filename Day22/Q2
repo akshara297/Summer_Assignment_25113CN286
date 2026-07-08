@@ -1,0 +1,13 @@
+public class CountWords {
+    public static int countWords(String str) {
+        if (str == null || str.trim().isEmpty()) return 0;
+        // Split by one or more whitespace characters
+        String[] words = str.trim().split("\\s+");
+        return words.length;
+    }
+
+    public static void main(String[] args) {
+        String sentence = "Java is a robust programming language.";
+        System.out.println("Word count: " + countWords(sentence));
+    }
+}
