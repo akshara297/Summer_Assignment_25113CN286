@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class ArrayOperationsSystem {
+    public static void main(String[] args) {
+        int[] arr = new int[5];
+        int size = 0;
+        Scanner sc = new Scanner(System.in);
+        
+        while (true) {
+            System.out.println("\n--- Array Operations ---\n1. Insert\n2. Display\n3. Search\n4. Exit");
+            System.out.print("Choice: ");
+            int choice = sc.nextInt();
+            if (choice == 4) break;
+            
+            switch (choice) {
+                case 1:
+                    if (size < arr.length) {
+                        System.out.print("Enter value: ");
+                        arr[size++] = sc.nextInt();
+                    } else System.out.println("Array Full.");
+                    break;
+                case 2:
+                    for (int i = 0; i < size; i++) System.out.print(arr[i] + " ");
+                    System.out.println();
+                    break;
+                case 3:
+                    System.out.print("Enter element to find: ");
+                    int target = sc.nextInt();
+                    int index = -1;
+                    for (int i = 0; i < size; i++) {
+                        if (arr[i] == target) { index = i; break; }
+                    }
+                    System.out.println(index != -1 ? "Found at index " + index : "Not found.");
+                    break;
+            }
+        }
+        sc.close();
+    }
+}
