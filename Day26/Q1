@@ -1,0 +1,14 @@
+public class DivisionHandler {
+    public static void safeDivide(int a, int b) {
+        try {
+            int result = a / b;
+            System.out.println("Result: " + result);
+        } catch (ArithmeticException e) {
+            System.err.println("Error: Cannot divide by zero.");
+        }
+    }
+
+    public static void main(String[] args) {
+        safeDivide(10, 0);
+    }
+}
