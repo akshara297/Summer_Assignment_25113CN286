@@ -1,0 +1,16 @@
+public class OnlyDigits {
+    public static boolean containsOnlyDigits(String str) {
+        if (str == null || str.isEmpty()) return false;
+        for (char ch : str.toCharArray()) {
+            if (!Character.isDigit(ch)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Is numeric: " + containsOnlyDigits("2026"));
+        System.out.println("Is numeric: " + containsOnlyDigits("2026A"));
+    }
+}
