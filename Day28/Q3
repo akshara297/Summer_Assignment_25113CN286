@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class TicketBookingSystem {
+    public static void main(String[] args) {
+        boolean[] seats = new boolean[10]; // false means available
+        Scanner sc = new Scanner(System.in);
+        
+        while (true) {
+            System.out.println("\n--- Concert Ticket Booking ---\n1. Show Available Seats\n2. Book a Seat\n3. Exit");
+            System.out.print("Choice: ");
+            int choice = sc.nextInt();
+            if (choice == 3) break;
+            
+            if (choice == 1) {
+                for (int i = 0; i < seats.length; i++) {
+                    System.out.print("Seat " + (i + 1) + ":" + (seats[i] ? "[X]" : "[ ]") + "  ");
+                }
+                System.out.println();
+            } else if (choice == 2) {
+                System.out.print("Enter seat number (1-10): ");
+                int seatNum = sc.nextInt() - 1;
+                if (seatNum >= 0 && seatNum < 10 && !seats[seatNum]) {
+                    seats[seatNum] = true;
+                    System.out.println("Seat booked successfully!");
+                } else {
+                    System.out.println("Seat unavailable or invalid choice.");
+                }
+            }
+        }
+        sc.close();
+    }
+}
