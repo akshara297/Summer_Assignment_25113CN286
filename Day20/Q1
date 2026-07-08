@@ -1,0 +1,26 @@
+public class MultiplyMatrices {
+    public static int[][] multiply(int[][] m1, int[][] m2) {
+        int r1 = m1.length, c1 = m1[0].length;
+        int c2 = m2[0].length;
+        int[][] product = new int[r1][c2];
+
+        for (int i = 0; i < r1; i++) {
+            for (int j = 0; j < c2; j++) {
+                for (int k = 0; k < c1; k++) {
+                    product[i][j] += m1[i][k] * m2[k][j];
+                }
+            }
+        }
+        return product;
+    }
+
+    public static void main(String[] args) {
+        int[][] m1 = {{1, 2}, {3, 4}};
+        int[][] m2 = {{2, 0}, {1, 2}};
+        int[][] res = multiply(m1, m2);
+        for (int[] row : res) {
+            for (int val : row) System.print(val + " ");
+            System.out.println();
+        }
+    }
+}
