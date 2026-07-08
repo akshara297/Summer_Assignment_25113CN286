@@ -1,0 +1,24 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class DuplicateCharacters {
+    public static void printDuplicates(String str) {
+        if (str == null) return;
+        Map<Character, Integer> charMap = new HashMap<>();
+
+        for (char ch : str.toCharArray()) {
+            charMap.put(ch, charMap.getOrDefault(ch, 0) + 1);
+        }
+
+        System.out.println("Duplicate characters in \"" + str + "\":");
+        for (Map.Entry<Character, Integer> entry : charMap.entrySet()) {
+            if (entry.getValue() > 1 && !Character.isWhitespace(entry.getKey())) {
+                System.out.println(entry.getKey() + " : " + entry.getValue() + " times");
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        printDuplicates("programming");
+    }
+}
